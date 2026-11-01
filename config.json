@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for money/risk parameters. PAPER ONLY. Edit here, not in code.",
-  "bankroll_usd": 50.0,
+  "bankroll_usd": 100.0,
   "sol_usd_source": "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd",
   "sol_usd_fallback": 102.06,
   "sol_usd_fallback_note": "CoinGecko 2026-10-29 18:32 UTC+3; used only if the live fetch fails (logged)",
