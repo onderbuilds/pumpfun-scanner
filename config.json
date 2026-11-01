@@ -1,0 +1,32 @@
+{
+  "_comment": "Single source of truth for money/risk parameters. PAPER ONLY. Edit here, not in code.",
+  "bankroll_usd": 50.0,
+  "sol_usd_source": "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd",
+  "sol_usd_fallback": 102.06,
+  "sol_usd_fallback_note": "CoinGecko 2026-10-29 18:32 UTC+3; used only if the live fetch fails (logged)",
+  "max_loss_per_trade_frac": 0.05,
+  "daily_loss_limit_frac": 0.1,
+  "day_boundary_tz_offset_hours": 3,
+  "max_concurrent": 5,
+  "fee_reserve_sol": 0.01,
+  "target_size_sol": 0.02,
+  "min_size_sol": 0.005,
+  "ata_rent_sol": 0.00151384,
+  "max_tx_retries": 2,
+  "tx_fail_prob_scenarios": [
+    0.8,
+    0.3
+  ],
+  "tx_cost_scenarios_sol": {
+    "median_0.000105": 0.000105,
+    "competitive_0.002": 0.002,
+    "aggressive_0.005": 0.005
+  },
+  "pump_curve_fee": 0.0125,
+  "pumpswap_fee_conservative": 0.0125,
+  "graduation_fee_sol": 0.015,
+  "state_db": "state/risk_state.sqlite",
+  "tx_fail_prob_note": "0.8 = PRIMARY: measured failed-tx share of the pump.fun stream 0.811 (collector STAT, 1,090,311/1,345,019 txs 19:06-20:04 UTC+3). That is everyone's txs (mostly slippage/nonce spam), used as a conservative proxy for ours. 0.3 = optimistic sensitivity with NO source.",
+  "pumpswap_migration_presell_frac": 0.25,
+  "pumpswap_migration_presell_note": "ASSUMPTION (unverified): others' sells remove 25% of pool SOL before our exit lands at migration"
+}
